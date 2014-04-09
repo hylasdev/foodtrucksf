@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>HUNGRY? SF Food Truck!</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'foodtrucks/style.css' %}" />
+        <script type='text/javascript' src="{% static 'foodtrucks/jquery-1.11.0.min.js' %}"></script>
+    </head>
+    <body>
+
+    <div class="header">
+        <h1 class="logo">SF Food Truck</h1>
+    </div>
+
+    <div class="mainbody">
+    {% block content %}
+    {% endblock %}
+    </div>
+    <div class="footer">
+        <h4> Copyright©: Hylas (Yu Chen) 2014 All Rights Reserved
+    </div>
+</body>
+</html>

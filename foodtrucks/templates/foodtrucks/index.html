@@ -1,0 +1,48 @@
+<!-- extends layout.html and override the content block -->
+{% extends "foodtrucks/layout.html" %}
+{% block content %}
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6gkYIRO0Xy_OmuYzJHcRoTqgzs1KFZhk&sensor=true"></script>
+<script type='text/javascript' src='/static/foodtrucks/index.js'></script>
+<!-- Map View in the main body container -->
+<div id="map_view"></div>
+
+<!-- Input bar floats on the map -->
+<div id="input_bar">
+    <input type='text' id='in_address' placeholder='Enter Address/Location/Zip'/>
+    <button id='getGeo'>Go!</button>
+    <button id='toggleFilter'>Filter Results</button>
+</div>
+
+<!-- Filter window floats on the map -->
+<div id="filter_dialog" hidden>
+    <div class='filter_categ'>
+        <p>Open Time</p>
+        <div>
+            <label for='checkopenonly'>Open Now Only</label>
+            <input type='checkbox' id='checkopenonly'/>
+        </div>
+    </div>
+    <div class='filter_categ'>
+        <p>Food Items</p>
+        <div>
+            <input type='text' id='custom_food' placeholder='pizza, burger, Chinese'/>
+            <em> e.g. burgers, pizza</em>
+        </div>
+    </div>
+    <div class='filter_categ'>
+        <p>Distance</p>
+        <div>
+            <input type='text' id='distance'/>
+            <em> e.g. 0.5 (in miles) </em>
+        </div>
+    </div>
+    <div id='filter_action'>
+        <button id='filter_apply'>update</button>
+        <button id='filter_cancel'>cancel</button>
+    </div>
+</div>
+<!-- Truck Info floats on the map -->
+<div id="truck_info" hidden></div>
+
+{% endblock %}
